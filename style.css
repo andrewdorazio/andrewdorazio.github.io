@@ -165,8 +165,10 @@ button::before, button::after {
   opacity: 1;
 }
 
+
 .secondary-button:hover::before {
   opacity: 0.9;
+  z-index: 10;
 }
 
 .hidden-button:hover::before {
