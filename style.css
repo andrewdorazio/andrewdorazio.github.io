@@ -39,6 +39,11 @@ body {
 
 h1 {
   font-size: 3em;
+  font-family: 'Philly-sans';
+  background: -webkit-linear-gradient(rgb(98, 15, 207), rgb(228, 25, 25));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Front page formatting */
@@ -49,7 +54,6 @@ h1 {
 
 .hidden-front-page {
   margin-top: 3%;
-  visibility: hidden;
 }
 
 /* Button styling */
@@ -57,7 +61,7 @@ h1 {
 a button {
   cursor: pointer;
   text-decoration: none;
-  margin: 1.5em 2.5em 2.5em 1.5em;
+  margin: 1.5em 1.5em 2.5em 1.5em;
   border-radius: 0.3em;
   font-size: 1.5em;
   text-shadow: 0 0 0.2em rgb(124, 124, 124), 0 0 0.5em currentColor;
@@ -79,7 +83,7 @@ a .secondary-button {
 }
 
 a .hidden-button {
-  margin: 0em 11.5em 0em 10em;
+  margin: 0em 11.5em 0em 11.5em;
   margin-top: 0%;
   font-size: 1em;
   border: 0.2em solid var(--clr-green);
@@ -126,29 +130,25 @@ button::before, button::after {
   position: absolute;
   box-shadow: 0 0 5em 0.5em var(--clr-blue);
   transform: perspective(1em) rotateX(53deg);
-  opacity: 0.05;
+  opacity: 0.07;
   transition: opacity 100ms linear;
   margin-left: -6em;
   margin-top: 5em;
 }
 
-.main-button:hover,
-.main-button:focus {
+.main-button:hover {
   background-color: var(--clr-blue);
   color: var(--clr-bg);
   text-shadow: none;
 }
 
 .secondary-button:hover,
-.secondary-button:focus,
-.hidden-button:hover,
-.hidden-button:focus {
+.hidden-button:hover {
   box-shadow: inset 0 0 0.2em rgb(124, 124, 124), 0 0 2em currentColor;
   text-shadow: none;
 }
 
-.hidden-button:hover,
-.hidden-button:focus {
+.hidden-button:hover {
   text-shadow: 0 0 0.5em rgb(124, 124, 124), 0 0 1.2em currentColor;
 }
 
