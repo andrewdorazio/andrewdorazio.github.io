@@ -1,6 +1,4 @@
-// Javascript file
-// Not sure what Im adding here yet
-
+// Javascript
 
 let buttonFunction = () => {
     let hiddenButton = document.getElementById('hidden-neon-buttons')

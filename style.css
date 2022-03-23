@@ -83,8 +83,7 @@ a .secondary-button {
 }
 
 a .hidden-button {
-  margin: 0em 11.5em 0em 11.5em;
-  margin-top: 0%;
+  margin: 4.5em 11.5em 0em 11.5em;
   font-size: 1em;
   border: 0.2em solid var(--clr-green);
   padding:0.7em 1.4em;
@@ -104,23 +103,28 @@ button::before, button::after {
 }
 
 .main-button::before{
-  width: 12em;
+  width: 14em;
   filter: blur(0.35em);
   opacity: 70%;
   background-color: var(--clr-blue);
-  margin-left: -3.5em;
+  margin-left: -4.3em;
 }
 
 .secondary-button::before, .hidden-button::before {
-  width: 14em;
-  filter: blur(0.50em);
-  opacity: 15%;
-  background-color: var(--clr-neon);
+  width: 13em;
   margin-left: -4em;
+}
+
+.secondary-button::before {
+  background-color: var(--clr-neon);
+  filter: blur(0.4em);
+  opacity: 35%;
 }
 
 .hidden-button::before {
   background-color: var(--clr-green);
+  filter: blur(0.5em);
+  opacity: 20%;
 }
 
 .main-button::after {
@@ -129,8 +133,8 @@ button::before, button::after {
   content: "";
   position: absolute;
   box-shadow: 0 0 5em 0.5em var(--clr-blue);
-  transform: perspective(1em) rotateX(53deg);
-  opacity: 0.07;
+  transform: perspective(1em) rotateX(52deg);
+  opacity: 0.06;
   transition: opacity 100ms linear;
   margin-left: -6em;
   margin-top: 5em;
@@ -145,6 +149,9 @@ button::before, button::after {
 .secondary-button:hover,
 .hidden-button:hover {
   box-shadow: inset 0 0 0.2em rgb(124, 124, 124), 0 0 2em currentColor;
+}
+
+.secondary-button:hover {
   text-shadow: none;
 }
 
@@ -156,13 +163,16 @@ button::before, button::after {
   opacity: 1;
 }
 
-.secondary-button:hover::before,
+.secondary-button:hover::before {
+  opacity: 0.9;
+}
+
 .hidden-button:hover::before {
-  opacity: 0.65;
+  opacity: 0.8;
 }
 
 .main-button:hover::after {
-  opacity: 0.2;
+  opacity: 0.85;
 }
 
 /* Contact Page Graffitti Writing */
