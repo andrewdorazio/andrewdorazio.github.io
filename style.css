@@ -1,0 +1,292 @@
+/* Colors and Font*/
+
+:root {
+  --clr-neon: hsl(317, 100%, 54%);
+  --clr-bg: rgb(17, 11, 15);
+  --clr-blue: hsl(216, 97%, 62%);
+  --clr-green: hsl(94, 91%, 57%);
+}
+
+@font-face {
+  font-family: 'philly-sans';
+  src: url('../fonts/philly-sans.otf');
+}
+
+/* Overall formatting */
+
+* {
+    background-color: var(--clr-bg);
+    text-align: center;
+    color: white;
+    font-family: 'Space Mono', monospace, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::before, 
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 50vh;
+  display: inline-block;
+  place-items: center;
+}
+
+/* Heading styling */
+
+h1 {
+  font-size: 3em;
+}
+
+/* Front page formatting */
+
+.front-page {
+  margin-top: 4%;
+}
+
+.hidden-front-page {
+  margin-top: 3%;
+  visibility: hidden;
+}
+
+/* Button styling */
+
+a button {
+  cursor: pointer;
+  text-decoration: none;
+  margin: 1.5em 2.5em 2.5em 1.5em;
+  border-radius: 0.3em;
+  font-size: 1.5em;
+  text-shadow: 0 0 0.2em rgb(124, 124, 124), 0 0 0.5em currentColor;
+    
+}
+
+a .main-button {
+  border: 0.2em solid var(--clr-blue);
+  padding:1em 3em;
+  color: var(--clr-blue);
+  box-shadow: inset 0 0 0.2em rgb(124, 124, 124), 0 0 0.5em currentColor;
+}
+
+a .secondary-button {
+  border: 0.2em solid var(--clr-neon);
+  padding:0.8em 2.4em;
+  color: var(--clr-neon);
+  box-shadow: 0 0 0.2em rgb(124, 124, 124), 0 0 0.5em currentColor;
+}
+
+a .hidden-button {
+  margin: 0em 11.5em 0em 10em;
+  margin-top: 0%;
+  font-size: 1em;
+  border: 0.2em solid var(--clr-green);
+  padding:0.7em 1.4em;
+  color: var(--clr-green);
+  box-shadow: inset 0 0 0.2em rgb(124, 124, 124), 0 0 0.5em currentColor;
+}
+
+/* Button animation */
+
+button::before, button::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  height: 0.5em;
+  transform: perspective(1em) rotateX(40deg);
+  margin-top: 3.8em;
+}
+
+.main-button::before{
+  width: 12em;
+  filter: blur(0.35em);
+  opacity: 70%;
+  background-color: var(--clr-blue);
+  margin-left: -3.5em;
+}
+
+.secondary-button::before, .hidden-button::before {
+  width: 14em;
+  filter: blur(0.50em);
+  opacity: 15%;
+  background-color: var(--clr-neon);
+  margin-left: -4em;
+}
+
+.hidden-button::before {
+  background-color: var(--clr-green);
+}
+
+.main-button::after {
+  width: 10em;
+  height: 0em;
+  content: "";
+  position: absolute;
+  box-shadow: 0 0 5em 0.5em var(--clr-blue);
+  transform: perspective(1em) rotateX(53deg);
+  opacity: 0.05;
+  transition: opacity 100ms linear;
+  margin-left: -6em;
+  margin-top: 5em;
+}
+
+.main-button:hover,
+.main-button:focus {
+  background-color: var(--clr-blue);
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.secondary-button:hover,
+.secondary-button:focus,
+.hidden-button:hover,
+.hidden-button:focus {
+  box-shadow: inset 0 0 0.2em rgb(124, 124, 124), 0 0 2em currentColor;
+  text-shadow: none;
+}
+
+.hidden-button:hover,
+.hidden-button:focus {
+  text-shadow: 0 0 0.5em rgb(124, 124, 124), 0 0 1.2em currentColor;
+}
+
+.main-button:hover::before {
+  opacity: 1;
+}
+
+.secondary-button:hover::before,
+.hidden-button:hover::before {
+  opacity: 0.65;
+}
+
+.main-button:hover::after {
+  opacity: 0.2;
+}
+
+/* Contact Page Graffitti Writing */
+
+.content-wrapper {
+  margin-top: 100%;
+  margin-bottom: 35%;
+}
+
+.text-wrapper {
+  width: 100%;
+  position: relative;
+  margin-top: -50%;
+}
+
+.text-wrapper h1 {
+  font-family: philly-sans;
+  font-size: 5em;
+  background: -webkit-linear-gradient(rgb(98, 15, 207), rgb(228, 25, 25));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+/* Fade in animation*/
+
+.fade-in-text {
+    animation: fadeIn 3s;
+    -webkit-animation: fadeIn 3s;
+    -moz-animation: fadeIn 3s;
+    -o-animation: fadeIn 3s;
+    -ms-animation: fadeIn 3s;
+  }
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+
+/* Fade in and out animation */
+
+.fade-out-text {
+    animation: fadeOut 3s;
+    -webkit-animation: fadeOut 3s;
+    -moz-animation: fadeOut 3s;
+    -o-animation: fadeOut 3s;
+    -ms-animation: fadeOut 3s;
+  }
+  @keyframes fadeOut {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeOut {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeOut {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeOut {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeOut {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+
+.fade-inout-text {
+    animation: fadeinout 3s linear forwards;
+    -webkit-animation: fadeinout 3s linear forwards;
+    -moz-animation: fadeinout 3s linear forwards;
+    -o-animation: fadeinout 3s linear forwards;
+    -ms-animation: fadeinout 3s linear forwards;
+  }
+  @keyframes fadeinout {
+    0%, 100% { opacity: 0; }
+    50% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeinout {
+    0%, 100% { opacity: 0; }
+    50% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeinout {
+    0%, 100% { opacity: 0; }
+    50% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeinout {
+    0%, 100% { opacity: 0; }
+    50% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeinout {
+    0%, 100% { opacity: 0; }
+    50% {opacity:1;}
+  }
+
