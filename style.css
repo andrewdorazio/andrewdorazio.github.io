@@ -3,7 +3,7 @@
 :root {
   --clr-neon: hsl(317, 100%, 54%);
   --clr-bg: rgb(17, 11, 15);
-  --clr-blue: hsl(216, 97%, 62%);
+  --clr-blue: hsl(207, 100%, 58%);
   --clr-green: hsl(94, 91%, 57%);
 }
 
@@ -144,6 +144,8 @@ button::before, button::after {
   background-color: var(--clr-blue);
   color: var(--clr-bg);
   text-shadow: none;
+  box-shadow: 0 0 0.2em rgb(124, 124, 124), 0 0 0.5em currentColor;
+
 }
 
 .secondary-button:hover,
