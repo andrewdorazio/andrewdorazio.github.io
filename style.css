@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: 'philly-sans';
-  src: url('../fonts/philly-sans.otf');
+  src: url('philly-sans.otf');
 }
 
 /* Overall formatting */
